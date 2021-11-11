@@ -1,0 +1,2 @@
+# linuxConf
+some tools configurations
