@@ -1,0 +1,42 @@
+# 该文件用于配置私钥对应的服务器
+Host github.com    
+HostName github.com
+AddKeysToAgent yes
+UseKeychain yes
+#Port 443
+User blackTulip
+IdentityFile ~/.ssh/id_rsa_ccd
+
+# second user(work@mail.com)
+# 建一个github别名，新建的帐号使用这个别名做克隆和更新
+#Host git.lianjia.com  
+#HostName git.lianjia.com    #公司的gitlab
+#User caichaodong
+#IdentityFile ~/.ssh/id_rsa
+
+Host tulip 
+HostName 67.216.220.175
+AddKeysToAgent yes
+UseKeychain yes
+Port 28856
+User tulip
+IdentityFile ~/.ssh/id_rsa_ccd
+
+
+Host server 
+HostName 67.216.220.175
+AddKeysToAgent yes
+UseKeychain yes
+Port 28856
+User root
+IdentityFile ~/.ssh/id_rsa_ccd
+
+Host spark 
+HostName 182.92.213.154
+AddKeysToAgent yes
+UseKeychain yes
+Port 22
+User tulip
+IdentityFile ~/.ssh/id_rsa_ccd
+
+
