@@ -52,7 +52,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ess org-plus-contrib sqlup-mode markdown-mode auctex ## cmake-mode cmake-ide evil-search-highlight-persist neotree projectile auto-complete ensime evil)))
+    (go-mode go project-explorer ess org-plus-contrib sqlup-mode markdown-mode auctex ## cmake-mode cmake-ide evil-search-highlight-persist neotree projectile auto-complete ensime evil)))
  '(safe-local-variable-values (quote ((encoding . utf-8)))))
 ;;(custom-set-faces
 ;; ;; custom-set-faces was added by Custom.
@@ -168,12 +168,16 @@
 
 
 (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(col-highlight ((t (:background "color-233"))))
  '(hl-line ((t (:background "color-233"))))
  '(lazy-highlight ((t (:background "black" :foreground "white" :underline t))))
  '(neo-dir-link-face ((t (:foreground "cyan"))))
  '(neo-file-link-face ((t (:foreground "white")))))
-(custom-set-variables)
+
 
 ;;(setq projectile-switch-project-action 'neotree-projectile-action)
 
@@ -280,12 +284,7 @@
 ;; ipython
 (setq python-shell-interpreter "ipython"
       python-shell-interpreter-args "--simple-prompt -i")
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
 
 
 ;; Merge comment-line and comment-dwim
@@ -328,3 +327,18 @@ Version 2016-10-25"
     (ess-fl-keyword:=)
     (ess-R-fl-keyword:F&T        . t)))
 (add-hook 'ess-mode-hook 'turn-on-pretty-mode)
+
+
+
+
+;; projectile
+(projectile-mode +1)
+;; Recommended keymap prefix on macOS
+;; (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+;; fix projectile  Symbol’s function definition is void: string-trim
+(require 'subr-x)
+
+
+
